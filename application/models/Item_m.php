@@ -13,7 +13,7 @@ class Item_m extends CI_Model
         if ($id != null) {
             $this->db->where('item_id', $id);
         }
-        $this->db->order_by('barcode', 'ASC');
+        $this->db->order_by('qrcode', 'ASC');
         $query = $this->db->get();
         return $query;
     }
@@ -21,7 +21,7 @@ class Item_m extends CI_Model
     public function save($post)
     {
         $data = [
-            'barcode' => $post['barcode'],
+            'qrcode' => $post['qrcode'],
             'name' => $post['nama_produk'],
             'category_id' => $post['category'],
             'unit_id' => $post['unit'],
@@ -35,7 +35,7 @@ class Item_m extends CI_Model
     public function update($post)
     {
         $data = [
-            'barcode' => $post['barcode'],
+            'qrcode' => $post['qrcode'],
             'name' => $post['nama_produk'],
             'category_id' => $post['category'],
             'unit_id' => $post['unit'],
@@ -48,11 +48,11 @@ class Item_m extends CI_Model
         $this->db->update('p_item', $data);
     }
 
-    public function cek_data($barcode)
+    public function cek_data($qrcode)
     {
         $this->db->select();
         $this->db->from('p_item');
-        $this->db->where('barcode', $barcode);
+        $this->db->where('qrcode', $qrcode);
         $query = $this->db->get();
         return $query;
     }

@@ -3,7 +3,7 @@ if ($cart->num_rows() > 0) {
     foreach ($cart->result() as $c) { ?>
         <tr>
             <td><?= $no++; ?></td>
-            <td><?= $c->barcode; ?></td>
+            <td><?= $c->qrcode; ?></td>
             <td><?= $c->item_name; ?></td>
             <td><?= indo_currency($c->cart_price); ?></td>
             <td><?= $c->qty; ?></td>
@@ -50,8 +50,8 @@ if ($cart->num_rows() > 0) {
             <div class="modal-body">
                 <form method="post" target="_self" name="formku" id="formku" class="eventInsForm">
                     <div class="form-row">
-                        <label for="barcode_name" class="col-form-label">Product Item</label>
-                        <input type="text" id="barcode_name" name="barcode_name" class="form-control" readonly>
+                        <label for="qrcode_name" class="col-form-label">Product Item</label>
+                        <input type="text" id="qrcode_name" name="qrcode_name" class="form-control" readonly>
                         <br><br>
                         <input type="text" id="product_name" class="form-control" readonly>
                         <input type="hidden" name="cart_id" id="cart_id">
@@ -101,7 +101,7 @@ if ($cart->num_rows() > 0) {
                 cart_id: cart_id
             },
             success: function(result) {
-                $('#barcode_name').val(result['barcode']);
+                $('#qrcode_name').val(result['qrcode']);
                 $('#product_name').val(result['item_name']);
                 $('#item_price').val(result['cart_price']);
                 $('#item_qty').val(result['qty']);

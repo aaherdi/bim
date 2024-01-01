@@ -94,7 +94,7 @@ INSERT INTO `p_category` (`category_id`, `name`, `created`, `updated`) VALUES
 
 CREATE TABLE `p_item` (
   `item_id` int(11) NOT NULL,
-  `barcode` varchar(100) DEFAULT NULL,
+  `qrcode` varchar(100) DEFAULT NULL,
   `name` varchar(100) DEFAULT NULL,
   `category_id` int(11) NOT NULL,
   `unit_id` int(11) NOT NULL,
@@ -109,7 +109,7 @@ CREATE TABLE `p_item` (
 -- Dumping data for table `p_item`
 --
 
-INSERT INTO `p_item` (`item_id`, `barcode`, `name`, `category_id`, `unit_id`, `price`, `stock`, `gambar`, `created`, `updated`) VALUES
+INSERT INTO `p_item` (`item_id`, `qrcode`, `name`, `category_id`, `unit_id`, `price`, `stock`, `gambar`, `created`, `updated`) VALUES
 (13, 'A001', 'Baju Batik', 5, 2, 10000, 27, 'Product-200712-5c4dee4425.jpeg', '2020-07-13 00:29:23', '2020-07-12 20:01:27'),
 (14, 'J002', 'Sapi Galak', 2, 2, 10000, 30, 'Product-200712-915638c1bc.png', '2020-07-13 00:29:54', NULL),
 (15, 'B001', 'Kambing Etawa', 2, 2, 1909090, 20, 'Product-200712-88b1791df9.jpg', '2020-07-13 00:30:19', '2020-07-12 19:59:48'),
@@ -367,7 +367,7 @@ ALTER TABLE `p_category`
 --
 ALTER TABLE `p_item`
   ADD PRIMARY KEY (`item_id`),
-  ADD UNIQUE KEY `barcode` (`barcode`),
+  ADD UNIQUE KEY `qrcode` (`qrcode`),
   ADD KEY `category_id` (`category_id`),
   ADD KEY `unit_id` (`unit_id`);
 

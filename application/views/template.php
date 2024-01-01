@@ -210,12 +210,12 @@
                                     <p>Sales</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a href="<?= site_url('reports/stock_report') ?>" class="nav-link <?= $this->uri->segment(2) == 'stock_report' ? 'active' : '' ?>">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Stocks</p>
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="nav-item">
                                 <a href="<?= site_url('reports/report_sale') ?>" class="nav-link <?= $this->uri->segment(2) == 'report_sale' ? 'active' : '' ?>">
                                     <i class="far fa-circle nav-icon"></i>

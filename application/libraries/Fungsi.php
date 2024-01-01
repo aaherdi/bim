@@ -57,11 +57,6 @@ class Fungsi
         $this->ci->load->model('supplier_m');
         return $this->ci->supplier_m->get()->num_rows();
     }
-    // public function count_sale()
-    // {
-    //     $this->ci->load->model('laporan_m');
-    //     return $this->ci->sale_m->get()->num_rows();
-    // }
     public function count_user()
     {
         $this->ci->load->model('user_m');

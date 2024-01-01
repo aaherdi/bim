@@ -34,10 +34,10 @@
                                 <input type="date" name="date" class="form-control" value="<?= date('Y-m-d') ?>">
                             </div>
                             <div class="form-group">
-                                <label for="barcode" class="col-form-label">Barcode <font color="#f00">*</font></label>
+                                <label for="qrcode" class="col-form-label">qrcode <font color="#f00">*</font></label>
                                 <div class="input-group">
                                     <input type="hidden" name="item_id" id="item_id">
-                                    <input type="text" name="barcode" id="barcode" class="form-control" aria-describedby="basic" autofocus>
+                                    <input type="text" name="qrcode" id="qrcode" class="form-control" aria-describedby="basic" autofocus>
                                     <div class="input-group-append">
                                         <span>
                                             <button type="button" class="input-group-text btn btn-info btn-flat form-control" data-toggle="modal" data-target="#modal-item"><i class="fa fa-search" id="basic"></i></button>
@@ -103,7 +103,7 @@
                     <table class="table table-bordered table-striped" id="example1">
                         <thead>
                             <tr>
-                                <th>Barcode</th>
+                                <th>qrcode</th>
                                 <th>Name</th>
                                 <th>Unit</th>
                                 <th>Price</th>
@@ -114,13 +114,13 @@
                         <tbody>
                             <?php foreach ($item as $i) { ?>
                                 <tr>
-                                    <td><?= $i->barcode; ?></td>
+                                    <td><?= $i->qrcode; ?></td>
                                     <td><?= $i->name; ?></td>
                                     <td style="text-align: center;"><?= $i->name_unit; ?></td>
                                     <td style="text-align: center;"><?= indo_currency($i->price); ?></td>
                                     <td><?= $i->stock; ?></td>
                                     <td align="center">
-                                        <button class="btn btn-xs btn-info" id="select" data-id="<?= $i->item_id; ?>" data-barcode="<?= $i->barcode; ?>" data-name="<?= $i->name; ?>" data-unit="<?= $i->name_unit; ?>" data-stock="<?= $i->stock; ?>">
+                                        <button class="btn btn-xs btn-info" id="select" data-id="<?= $i->item_id; ?>" data-qrcode="<?= $i->qrcode; ?>" data-name="<?= $i->name; ?>" data-unit="<?= $i->name_unit; ?>" data-stock="<?= $i->stock; ?>">
                                             <i class="fa fa-check"></i> Select
                                         </button>
                                     </td>
@@ -138,7 +138,7 @@
     </div>
 </div>
 <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
-<script>
+<!-- <script>
     // Enable pusher logging - don't include this in production
     Pusher.logToConsole = true;
 
@@ -150,18 +150,18 @@
     channel.bind('my-event', function(data) {
         alert(JSON.stringify(data));
     });
-</script>
+</script> -->
 
 <script>
     $(document).ready(function() {
         $(document).on('click', '#select', function() {
             var item_id = $(this).data('id');
-            var barcode = $(this).data('barcode');
+            var qrcode = $(this).data('qrcode');
             var name = $(this).data('name');
             var unit_name = $(this).data('unit');
             var stock = $(this).data('stock');
             $('#item_id').val(item_id);
-            $('#barcode').val(barcode);
+            $('#qrcode').val(qrcode);
             $('#item_name').val(name);
             $('#unit_name').val(unit_name);
             $('#stock').val(stock);

@@ -31,7 +31,7 @@
                     <thead>
                         <tr>
                             <th style="width: 10px">No.</th>
-                            <th>Barcode</th>
+                            <th>Qrcode</th>
                             <th>Item Name</th>
                             <th>Detail</th>
                             <th>Qty</th>
@@ -44,13 +44,13 @@
                         foreach ($stock as $s) { ?>
                             <tr>
                                 <td><?= $no++; ?></td>
-                                <td><?= $s->barcode; ?></td>
+                                <td><?= $s->qrcode; ?></td>
                                 <td><?= $s->item_name ?></td>
                                 <td><?= $s->detail; ?></td>
                                 <td style="text-align: right;"><?= $s->qty ?></td>
                                 <td style="text-align: center;"><?= indo_date($s->date) ?></td>
                                 <td align="center">
-                                    <a class="btn btn-default btn-sm" id="select-detail" data-toggle="modal" data-target="#modal-detail" data-barcode="<?= $s->barcode; ?>" data-itemname=" <?= $s->item_name; ?>" data-suppliername="<?= $s->supplier_name; ?>" data-qty="<?= $s->qty; ?>" data-date="<?= indo_date($s->date); ?>"><i class=" fa fa-eye"></i>
+                                    <a class="btn btn-default btn-sm" id="select-detail" data-toggle="modal" data-target="#modal-detail" data-qrcode="<?= $s->qrcode; ?>" data-itemname=" <?= $s->item_name; ?>" data-suppliername="<?= $s->supplier_name; ?>" data-qty="<?= $s->qty; ?>" data-date="<?= indo_date($s->date); ?>"><i class=" fa fa-eye"></i>
                                     </a>
                                     <form action="<?= site_url('stock/stock_in_del') ?>" method="post" class="d-inline">
                                         <input type="hidden" name="stock_id" value="<?= $s->stock_id; ?>">
@@ -82,10 +82,10 @@
                     <table class="table table-borderless">
                         <tbody>
                             <tr>
-                                <th>Barcode</th>
+                                <th>qrcode</th>
                                 <td>:</td>
                                 <td>
-                                    <span id="barcode">&nbsp;</span>
+                                    <span id="qrcode">&nbsp;</span>
                                 </td>
                             </tr>
                             <tr>
@@ -127,13 +127,13 @@
     $(document).ready(function() {
         $(document).on('click', '#select-detail', function() {
             var item_id = $(this).data('id');
-            var barcode = $(this).data('barcode');
+            var qrcode = $(this).data('qrcode');
             var itemname = $(this).data('itemname');
             var suppliername = $(this).data('suppliername');
             var qty = $(this).data('qty');
             var date = $(this).data('date');
             $('#item_id').val(item_id);
-            $('#barcode').text(barcode);
+            $('#qrcode').text(qrcode);
             $('#item_name').text(itemname);
             $('#supplier').text(suppliername);
             $('#qty').text(qty);

@@ -66,14 +66,14 @@
                         <table width="100%">
                             <tr>
                                 <td style="vertical-align: top; width:30%;">
-                                    <label for="barcode">qrcode</label>
+                                    <label for="qrcode">qrcode</label>
                                 </td>
                                 <td>
                                     <div class="form-group input-group">
                                         <input type="hidden" id="item_id">
                                         <input type="hidden" id="price">
                                         <input type="hidden" id="stock">
-                                        <input type="text" name="barcode" id="barcode" class="form-control" aria-describedby="basic">
+                                        <input type="text" name="qrcode" id="qrcode" class="form-control" aria-describedby="basic">
                                         <div class="input-group-append">
                                             <span>
                                                 <button type="button" class="input-group-text btn btn-info btn-flat form-control" data-toggle="modal" data-target="#modal-item"><i class="fa fa-search" id="basic"></i></button>
@@ -269,13 +269,13 @@
                         <tbody id="tblItem">
                             <!--  <?php foreach ($item as $i) { ?>
                                 <tr>
-                                    <td><?= $i->barcode; ?></td>
+                                    <td><?= $i->qrcode; ?></td>
                                     <td><?= $i->name; ?></td>
                                     <td style="text-align: center;"><?= $i->name_unit; ?></td>
                                     <td style="text-align: center;"><?= indo_currency($i->price); ?></td>
                                     <td><?= $i->stock; ?></td>
                                     <td align="center">
-                                        <button class="btn btn-xs btn-info" id="select" data-id="<?= $i->item_id; ?>" data-barcode="<?= $i->barcode; ?>" data-price="<?= $i->price; ?>" data-stock="<?= $i->stock; ?>">
+                                        <button class="btn btn-xs btn-info" id="select" data-id="<?= $i->item_id; ?>" data-qrcode="<?= $i->qrcode; ?>" data-price="<?= $i->price; ?>" data-stock="<?= $i->stock; ?>">
                                             <i class="fa fa-check"></i> Select
                                         </button>
                                     </td>
@@ -296,7 +296,7 @@
 
     $(document).on('click', '#select', function() {
         $('#item_id').val($(this).data('id'))
-        $('#barcode').val($(this).data('barcode'))
+        $('#qrcode').val($(this).data('qrcode'))
         $('#price').val($(this).data('price'))
         $('#stock').val($(this).data('stock'))
         $('#modal-item').modal('hide')
@@ -306,8 +306,8 @@
         if (val > $('#stock').val()) {
             alert('Stock tidak mencukupi');
             $('#item_id').val('');
-            $('#barcode').val('');
-            $('#barcode').focus();
+            $('#qrcode').val('');
+            $('#qrcode').focus();
             $('#qty').val(1);
         }
     }
@@ -319,12 +319,12 @@
         var qty = $('#qty').val();
         if (item_id == '') {
             alert('Product belum dipilih');
-            $('#barcode').focus();
+            $('#qrcode').focus();
         } else if (parseInt(qty) > parseInt(stock)) {
             alert('Stock tidak mencukupi');
             $('#item_id').val('');
-            $('#barcode').val('');
-            $('#barcode').focus();
+            $('#qrcode').val('');
+            $('#qrcode').focus();
         } else {
             $.ajax({
                 type: "POST",
@@ -342,9 +342,9 @@
                             calculate()
                         });
                         $('#item_id').val('');
-                        $('#barcode').val('');
+                        $('#qrcode').val('');
                         $('#qty').val(1);
-                        $('#barcode').focus();
+                        $('#qrcode').focus();
                         loadItem()
                     } else {
                         alert('Gagal tambah item cart');
@@ -390,7 +390,7 @@
 
         if (subtotal < 1) {
             alert('Product belum dipilih');
-            $('#barcode').focus();
+            $('#qrcode').focus();
         } else if (cash < 1) {
             alert('Masukkan Uang Cash');
             $('#cash').focus();
@@ -449,8 +449,8 @@
             $('#discount').val(0)
             $('#cash').val(0)
             $('#customer').val(0).change()
-            $('#barcode').val('')
-            $('#barcode').focus()
+            $('#qrcode').val('')
+            $('#qrcode').focus()
 
         }
     });

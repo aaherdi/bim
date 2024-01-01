@@ -32,13 +32,13 @@
                                 <form method="post" target="_self" name="formku" id="formku" class="eventInsForm" enctype="multipart/form-data">
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="barcode" class="col-form-label">Barcode <font color="#f00">*</font></label>
+                                            <label for="qrcode" class="col-form-label">qrcode <font color="#f00">*</font></label>
                                         </div>
                                         <div class="col-md-8 col-xs-8">
-                                            <input type="text" name="barcode" id="barcode" class="form-control" style="margin-bottom: 5px;" maxlength="100" autofocus onkeyup="this.value = this.value.capitalize()">
+                                            <input type="text" name="qrcode" id="qrcode" class="form-control" style="margin-bottom: 5px;" maxlength="100" autofocus onkeyup="this.value = this.value.capitalize()">
                                             <input type="hidden" name="item_id" id="item_id">
                                             <input type="hidden" name="gambar_lama" id="gambar_lama">
-                                            <div class="invalid-feedback nama-ada inv-barcode">
+                                            <div class="invalid-feedback nama-ada inv-qrcode">
                                                 &nbsp;
                                             </div>
                                         </div>
@@ -167,7 +167,7 @@
                             <thead>
                                 <tr>
                                     <th style="width: 10px">No.</th>
-                                    <th>Barcode</th>
+                                    <th>Qrcode</th>
                                     <th>Name</th>
                                     <th>Category</th>
                                     <th>Unit</th>
@@ -183,9 +183,9 @@
                                     <tr>
                                         <td><?= $no++ . '.'; ?></td>
                                         <td>
-                                            <?= $i->barcode; ?><br>
-                                            <a href="<?= site_url('item/barcode_qrcode/' . $i->item_id); ?>" class="btn btn-warning btn-sm">
-                                                Generate <i class="fa fa-barcode"></i>
+                                            <?= $i->qrcode; ?><br>
+                                            <a href="<?= site_url('item/qrcode/' . $i->item_id); ?>" class="btn btn-warning btn-sm">
+                                                Generate <i class="fa fa-qrcode"></i>
                                             </a>
                                         </td>
                                         <td><?= $i->name; ?></td>
@@ -236,7 +236,7 @@
 
     function tambahData() {
         $('#item_id').val('');
-        $('#barcode').val('');
+        $('#qrcode').val('');
         $('#nama_produk').val('');
         $('#category').val('');
         $('#unit').val('');
@@ -253,11 +253,11 @@
     }
 
     function simpandata() {
-        if ($.trim($("#barcode").val()) == "") {
-            $(".inv-barcode").html("Barcode tidak boleh kosong! ");
-            $('#barcode').addClass('is-invalid');
+        if ($.trim($("#qrcode").val()) == "") {
+            $(".inv-qrcode").html("qrcode tidak boleh kosong! ");
+            $('#qrcode').addClass('is-invalid');
             window.setTimeout(function() {
-                $('.inv-barcode').hide(300);
+                $('.inv-qrcode').hide(300);
             }, 3000);
         } else if ($.trim($("#nama_produk").val()) == "") {
             $(".inv-name").html("Nama Produk tidak boleh kosong!");
@@ -275,14 +275,14 @@
             if (dsState == "Input") {
                 $.ajax({
                     type: "POST",
-                    url: "<?= site_url('item/cek_barcode') ?>",
+                    url: "<?= site_url('item/cek_qrcode') ?>",
                     data: {
-                        data: $("#barcode").val()
+                        data: $("#qrcode").val()
                     },
                     success: function(result) {
                         if (result == "ADA") {
                             //console.log(result);
-                            $('.nama-ada').html("Barcode sudah terdaftar!");
+                            $('.nama-ada').html("qrcode sudah terdaftar!");
                             $('.nama-ada').show();
                         } else {
                             // console.log(result);
@@ -310,7 +310,7 @@
                 item_id: item_id
             },
             success: function(result) {
-                $('#barcode').val(result['barcode']);
+                $('#qrcode').val(result['qrcode']);
                 $('#nama_produk').val(result['name']);
                 $('#category').val(result['category_id']);
                 $('#unit').val(result['unit_id']);

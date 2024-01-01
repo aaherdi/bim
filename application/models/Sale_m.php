@@ -20,7 +20,7 @@ class Sale_m extends CI_Model
 
     public function get_cart($params = null)
     {
-        $this->db->select('*,p_item.barcode, p_item.name as item_name, t_cart.price as cart_price');
+        $this->db->select('*,p_item.qrcode, p_item.name as item_name, t_cart.price as cart_price');
         $this->db->from('t_cart');
         $this->db->join('p_item', 't_cart.item_id=p_item.item_id');
         if ($params != null) {
@@ -57,7 +57,7 @@ class Sale_m extends CI_Model
 
     public function get($id = null)
     {
-        $this->db->select('*,p_item.barcode, p_item.name as item_name, t_cart.price as cart_price, t_cart.item_id as cart_item');
+        $this->db->select('*,p_item.qrcode, p_item.name as item_name, t_cart.price as cart_price, t_cart.item_id as cart_item');
         $this->db->from('t_cart');
         $this->db->join('p_item', 't_cart.item_id=p_item.item_id');
         if ($id != null) {

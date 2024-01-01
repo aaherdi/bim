@@ -28,13 +28,13 @@ class Item extends CI_Controller
 
         foreach ($data as $row) {
             $tabel .= '<tr>';
-            $tabel .= '<td>' . $row->barcode . '</td>';
+            $tabel .= '<td>' . $row->qrcode . '</td>';
             $tabel .= '<td>' . $row->name . '</td>';
             $tabel .= '<td style="text-align: center;">' . $row->name_unit . '</td>';
             $tabel .= '<td style="text-align: center;">' . indo_currency($row->price) . '</td>';
             $tabel .= '<td>' . $row->stock . '</label>';
             $tabel .= '<td style="text-align:center;">';
-            $tabel .= '<button class="btn btn-xs btn-info" id="select" data-id="' . $row->item_id . '" data-barcode="' . $row->barcode . '" data-price="' . $row->price . '" data-stock="' . $row->stock . '"><i class="fa fa-check"></i> Select</button>';
+            $tabel .= '<button class="btn btn-xs btn-info" id="select" data-id="' . $row->item_id . '" data-qrcode="' . $row->qrcode . '" data-price="' . $row->price . '" data-stock="' . $row->stock . '"><i class="fa fa-check"></i> Select</button>';
             $tabel .= '</td>';
             $tabel .= '</tr>';
         }
@@ -43,10 +43,10 @@ class Item extends CI_Controller
         echo json_encode($tabel);
     }
 
-    public function cek_barcode()
+    public function cek_qrcode()
     {
-        $barcode = $this->input->post('data');
-        $cek_data = $this->item_m->cek_data($barcode)->row_array();
+        $qrcode = $this->input->post('data');
+        $cek_data = $this->item_m->cek_data($qrcode)->row_array();
         $return_data = ($cek_data) ? "ADA" : "TIDAK ADA";
 
         header('Content-Type: application/json');
@@ -137,18 +137,11 @@ class Item extends CI_Controller
         redirect('item');
     }
 
-    public function barcode_qrcode($id)
+    public function qrcode($id)
     {
 
         $data['item'] = $this->item_m->get($id)->row();
-        $this->template->load('template', 'product/item/barcode_qrcode', $data);
-    }
-
-    public function barcode_print($id)
-    {
-        $data['item'] = $this->item_m->get($id)->row();
-        $html = $this->load->view('product/item/barcode_print', $data, true);
-        $this->fungsi->PdfGenerator($html, 'barcode-' . $data['item']->barcode, 'A4', 'landscape');
+        $this->template->load('template', 'product/item/qrcode', $data);
     }
     public function qrcode_print($id)
     {
@@ -156,21 +149,6 @@ class Item extends CI_Controller
         $html = $this->load->view('product/item/qrcode_print', $data, true);
         // var_dump($html);
         // die();
-        $this->fungsi->PdfGenerator($html, 'qrcode-' . $data['item']->barcode, 'A4', 'potrait');
+        $this->fungsi->PdfGenerator($html, 'qrcode-' . $data['item']->qrcode, 'A4', 'potrait');
     }
-
-    // public function qrcode($id)
-    // {
-    //     $this->load->library('ciqrcode');
-    //     $data['row'] = $this->item_m->get($id)->row();
-    //     $this->template->load('template', 'product/item/qrcode', $data);
-    // }
-
-    // function qrcode_print($id)
-    // {
-    //     $this->load->library('ciqrcode');
-    //     $data['row'] = $this->item_m->get($id)->row();
-    //     $html = $this->load->view('product/item/qrcode_print', $data, true);
-    //     $this->fungsi->PdfGenerator($html, 'qrcode-' . $data['row']->qrcode, 'A4', 'potrait');
-    // }
 }

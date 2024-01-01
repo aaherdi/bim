@@ -31,7 +31,7 @@
                     <thead>
                         <tr>
                             <th style="width: 10px">No.</th>
-                            <th>Barcode</th>
+                            <th>qrcode</th>
                             <th>Item Name</th>
                             <th>Info</th>
                             <th>Qty</th>
@@ -44,7 +44,7 @@
                         foreach ($stock as $s) { ?>
                             <tr>
                                 <td><?= $no++; ?></td>
-                                <td><?= $s->barcode; ?></td>
+                                <td><?= $s->qrcode; ?></td>
                                 <td><?= $s->item_name ?></td>
                                 <td><?= $s->detail; ?></td>
                                 <td style="text-align: right;"><?= $s->qty ?></td>

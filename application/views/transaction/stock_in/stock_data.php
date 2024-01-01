@@ -40,11 +40,11 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="barcode" class="col-form-label">Barcode <font color="#f00">*</font></label>
+                                            <label for="qrcode" class="col-form-label">qrcode <font color="#f00">*</font></label>
                                         </div>
                                         <div class="col-md-8 col-xs-8 input-group">
                                             <input type="hidden" name="stock_id" id="stock_id">
-                                            <input type="text" name="barcode" id="barcode" class="form-control" aria-describedby="basic" autofocus style="margin-bottom:5px;">
+                                            <input type="text" name="qrcode" id="qrcode" class="form-control" aria-describedby="basic" autofocus style="margin-bottom:5px;">
                                             <div class="input-group-append">
                                                 <button type="button" class="input-group-text btn btn-info form-control"><i class="fa fa-search" id="basic" style="margin-bottom:5px;"></i></button>
                                             </div>
