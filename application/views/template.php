@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>myPOS | Dashboard</title>
+    <title>Bengkel Irfan Motor</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -36,41 +36,9 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
             </ul>
-            <!-- SEARCH FORM -->
-            <form class="form-inline ml-3">
-                <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-navbar" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <!-- Messages Dropdown Menu -->
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-bell"></i>
-                        <span class="badge badge-danger navbar-badge">3</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <a href="#" class="dropdown-item">
-                            
-                            <div class="media">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        Tidak ada Notifikasi
-                                    </h3>
-                                </div>
-                            </div>
-                            
-                        </a>
-                        <div class="dropdown-divider"></div>
-                    </div>
-                </li> -->
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -84,11 +52,6 @@
                         <a href="<?= site_url('auth/logout') ?>" class="dropdown-item dropdown-footer tombol-logout">Log Out</a>
                     </div>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                        <i class="fas fa-th-large"></i>
-                    </a>
-                </li> -->
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -96,9 +59,8 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="<?= base_url('assets/template/admin') ?>/index3.html" class="brand-link">
-                <img src="<?= base_url('assets/template/admin') ?>/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">my<b>POS</b></span>
+            <a href="#" class="brand-link">
+                <span class="brand-text font-weight-light">Bengkel<b> Irfan Motor</b></span>
             </a>
 
             <!-- Sidebar -->
@@ -116,9 +78,6 @@
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-                        <li class="nav-header">MAIN NAVIGATION</li>
                         <li class="nav-item">
                             <a href="<?= site_url('home') ?>" class="nav-link <?= $this->uri->segment(1) == 'home' || $this->uri->segment(1) == '' ? 'active' : '' ?>">
                                 <i class="fas fa-tachometer-alt nav-icon"></i>
@@ -128,20 +87,20 @@
                         <li class="nav-item">
                             <a href="<?= site_url('supplier') ?>" class="nav-link <?= $this->uri->segment(1) == 'supplier' ? 'active' : '' ?>">
                                 <i class="fas fa-truck nav-icon"></i>
-                                <p>Supliers</p>
+                                <p>Supplier</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="<?= site_url('customer') ?>" class="nav-link" <?= $this->uri->segment(1) == 'customer' ? 'active' : '' ?>>
                                 <i class="fas fa-users nav-icon"></i>
-                                <p>Customers</p>
+                                <p>Pelanggan</p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview <?= $this->uri->segment(1) == 'category' || $this->uri->segment(1) == 'unit' || $this->uri->segment(1) == 'item' ? 'menu-open' : '' ?>">
                             <a href="#" class="nav-link <?= $this->uri->segment(1) == 'category' || $this->uri->segment(1) == 'unit' || $this->uri->segment(1) == 'item' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-archive"></i>
                                 <p>
-                                    Products
+                                    Produk
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -149,18 +108,18 @@
                                 <li class="nav-item">
                                     <a href="<?= site_url('category') ?>" class="nav-link <?= $this->uri->segment(1) == 'category' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Categories</p>
+                                        <p>Kategori</p>
                                     </a>
                                 <li class="nav-item">
                                     <a href="<?= site_url('unit') ?>" class="nav-link <?= $this->uri->segment(1) == 'unit' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Units</p>
+                                        <p>Satuan</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="<?= site_url('item') ?>" class="nav-link <?= $this->uri->segment(1) == 'item' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Items</p>
+                                        <p>Barang</p>
                                     </a>
                                 </li>
                         </li>
@@ -170,7 +129,7 @@
                         <a href="#" class="nav-link <?= $this->uri->segment(1) == 'sales' || $this->uri->segment(2) == 'in' || $this->uri->segment(2) == 'out' ? 'active' : '' ?>">
                             <i class="nav-icon fas fa-shopping-cart"></i>
                             <p>
-                                Transaction
+                                Transaksi
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -178,19 +137,19 @@
                             <li class="nav-item">
                                 <a href="<?= site_url('sales') ?>" class="nav-link  <?= $this->uri->segment(1) == 'sales' ? 'active' : '' ?>">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Sales</p>
+                                    <p>Penjualan</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="<?= site_url('stock/in'); ?>" class="nav-link <?= $this->uri->segment(2) == 'in' ? 'active' : '' ?>">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Stock In</p>
+                                    <p>Stok Barang Masuk</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="<?= site_url('stock/out'); ?>" class="nav-link <?= $this->uri->segment(2) == 'out' ? 'active' : '' ?>">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Stock Out</p>
+                                    <p>Stok Barang Keluar</p>
                                 </a>
                             </li>
                         </ul>
@@ -199,7 +158,7 @@
                         <a href="#" class="nav-link <?= $this->uri->segment(2) == 'sale_report' || $this->uri->segment(2) == 'stock_report' || $this->uri->segment(2) == 'report_sale' ? 'active' : '' ?>">
                             <i class="nav-icon fas fa-chart-pie"></i>
                             <p>
-                                Reports
+                                Laporan
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -207,7 +166,7 @@
                             <li class="nav-item">
                                 <a href="<?= site_url('reports/sale_report'); ?>" class="nav-link <?= $this->uri->segment(2) == 'sale_report' ? 'active' : '' ?>">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Sales</p>
+                                    <p>Histori Penjualan</p>
                                 </a>
                             </li>
                             <!-- <li class="nav-item">
@@ -219,17 +178,16 @@
                             <li class="nav-item">
                                 <a href="<?= site_url('reports/report_sale') ?>" class="nav-link <?= $this->uri->segment(2) == 'report_sale' ? 'active' : '' ?>">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Laporan</p>
+                                    <p>Cetak Laporan</p>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <?php if ($this->fungsi->user_login()->level == 1) { ?>
-                        <li class="nav-header">SETTINGS</li>
                         <li class="nav-item">
                             <a href="<?= site_url('user') ?>" class="nav-link">
                                 <i class="fas fa-user nav-icon"></i>
-                                <p>Users</p>
+                                <p>Pengguna</p>
                             </a>
                         </li>
                     <?php } ?>
@@ -249,10 +207,7 @@
         <!-- /.content-wrapper -->
 
         <footer class="main-footer">
-            <div class="float-right d-none d-sm-block">
-                <b>Version</b> 1.0
-            </div>
-            <strong>Copyright &copy; <?= date('Y'); ?> <a href="http://adminlte.io">myPOS</a>.</strong> All rights
+            <strong>Copyright &copy; <?= date('Y'); ?></strong> All rights
             reserved.
         </footer>
 
