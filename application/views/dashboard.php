@@ -4,12 +4,6 @@
 			<div class="col-sm-6">
 				<h1>Dashboard</h1>
 			</div>
-			<div class="col-sm-6">
-				<ol class="breadcrumb float-sm-right">
-					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item active">Dashboard</li>
-				</ol>
-			</div>
 		</div>
 	</div><!-- /.container-fluid -->
 </section>
@@ -26,7 +20,7 @@
 					<span class="info-box-icon bg-info elevation-1"><i class="fas fa-th"></i></span>
 
 					<div class="info-box-content">
-						<span class="info-box-text">Items</span>
+						<span class="info-box-text">Barang</span>
 						<span class="info-box-number"><?= $this->fungsi->count_item() ?></span>
 					</div>
 					<!-- /.info-box-content -->
@@ -39,7 +33,7 @@
 					<span class="info-box-icon bg-danger elevation-1"><i class="fas fa-truck"></i></span>
 
 					<div class="info-box-content">
-						<span class="info-box-text">Suppliers</span>
+						<span class="info-box-text">Supplier</span>
 						<span class="info-box-number"><?= $this->fungsi->count_supplier() ?></span>
 					</div>
 					<!-- /.info-box-content -->
@@ -57,7 +51,7 @@
 						<span class="info-box-icon bg-warning elevation-1"><i class="fas fa-user-plus"></i></span>
 
 						<div class="info-box-content">
-							<span class="info-box-text">Users</span>
+							<span class="info-box-text">Kasir</span>
 							<span class="info-box-number"><?= $this->fungsi->count_user() ?></span>
 						</div>
 						<!-- /.info-box-content -->

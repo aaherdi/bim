@@ -2,13 +2,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Categories</h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="<?= site_url('dashboard') ?>">Home</a></li>
-                    <li class="breadcrumb-item active">Data Categories</li>
-                </ol>
+                <h1>Kategori Barang</h1>
             </div>
         </div>
     </div>
@@ -32,7 +26,7 @@
                                 <form method="post" target="_self" name="formku" id="formku" class="eventInsForm">
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="name" class="col-form-label">Category Name <font color="#f00">*</font></label>
+                                            <label for="name" class="col-form-label">Nama Kategori <font color="#f00">*</font></label>
                                         </div>
                                         <div class="col-md-8 col-xs-8">
                                             <input type="text" name="name" id="name" class="form-control" style="margin-bottom: 5px;" maxlength="100" autofocus>
@@ -45,8 +39,8 @@
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
-                                <button type="button" class="btn btn-primary" onclick="simpandata()"><i class="fa fa-save"></i> Save</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Batal</button>
+                                <button type="button" class="btn btn-primary" onclick="simpandata()"><i class="fa fa-save"></i> Simpan</button>
                             </div>
                         </div>
                     </div>
@@ -54,7 +48,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-sm-right">
-                            <a onclick="tambahData()" class="btn btn-success btn-sm" style="color: aliceblue;"><i class="fa fa-plus"> Create</i></a>
+                            <a onclick="tambahData()" class="btn btn-success btn-sm" style="color: aliceblue;"><i class="fa fa-plus"> Tambahkan Data</i></a>
                         </div>
                     </div>
                     <div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan') ?>">
@@ -66,8 +60,8 @@
                             <thead>
                                 <tr>
                                     <th style="width: 10px">No.</th>
-                                    <th>Name</th>
-                                    <th>Action</th>
+                                    <th>Nama</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -119,7 +113,7 @@
         $('#name').val('');
         dsState = "Input";
 
-        $("#myModal").find('.modal-title').text('Add category');
+        $("#myModal").find('.modal-title').text('Tambah Kategori');
         $("#myModal").modal('show', {
             backdrop: 'true'
         });

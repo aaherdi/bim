@@ -2,13 +2,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Items</h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="<?= site_url('dashboard') ?>">Home</a></li>
-                    <li class="breadcrumb-item active">Data Items</li>
-                </ol>
+                <h1>Barang</h1>
             </div>
         </div>
     </div>
@@ -45,7 +39,7 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="nama_produk" class="col-form-label">Name Product <font color="#f00">*</font></label>
+                                            <label for="nama_produk" class="col-form-label">Nama Barang <font color="#f00">*</font></label>
                                         </div>
                                         <div class="col-md-8 col-xs-8">
                                             <input type="text" name="nama_produk" id="nama_produk" class="form-control" style="margin-bottom: 5px;" maxlength="100" autofocus>
@@ -56,7 +50,7 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="category" class="col-form-label">Category <font color="#f00">*</font></label>
+                                            <label for="category" class="col-form-label">Nama Kategori <font color="#f00">*</font></label>
                                         </div>
                                         <div class="col-md-8 col-xs-8">
                                             <select name="category" id="category" class="form-control" style="margin-bottom: 5px;">
@@ -72,7 +66,7 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="unit" class="col-form-label">Unit <font color="#f00">*</font></label>
+                                            <label for="unit" class="col-form-label">Satuan <font color="#f00">*</font></label>
                                         </div>
                                         <div class="col-md-8 col-xs-8">
                                             <select name="unit" id="unit" class="form-control" style="margin-bottom: 5px;">
@@ -88,7 +82,7 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="price" class="col-form-label">Price <font color="#f00">*</font></label>
+                                            <label for="price" class="col-form-label">Harga <font color="#f00">*</font></label>
                                         </div>
                                         <div class="col-md-8 col-xs-8">
                                             <input type="number" name="price" id="price" class="form-control" style="margin-bottom: 5px;" maxlength="100" autofocus>
@@ -99,7 +93,7 @@
                                     </div>
                                     <div class="form-row" id="input_photo" style="display:none;">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="gambar" class="col-form-label">Photo Product</label>
+                                            <label for="gambar" class="col-form-label">Gambar Barang</label>
                                         </div>
                                         <div class="col-md-8 col-xs4">
                                             <div class="fileinput fileinput-new myline" data-provides="fileinput" style="margin-bottom:5px">
@@ -110,27 +104,27 @@
                                                     </div>
                                                     <span class="input-group-addon btn btn-default btn-file">
                                                         <span class="fileinput-new">
-                                                            Select file </span>
+                                                            Pilih File </span>
                                                         <span class="fileinput-exists">
-                                                            Change </span>
+                                                            Ganti </span>
                                                         <input type="file" name="gambar" id="gambar">
                                                     </span>
                                                     <a href="javascript:;" class="input-group-addon btn btn-danger fileinput-exists" data-dismiss="fileinput">
-                                                        Remove </a>
+                                                        Hapus </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-row" id="edit_photo" style="display:none;">
                                         <div class="col-md-4">
-                                            <label for="photo-url" class="col-form-label">Photo Product</label>
+                                            <label for="photo-url" class="col-form-label">Gambar Barang</label>
                                         </div>
                                         <div class="col-md-5">
                                             <input type="text" id="photo_url" name="photo_url" class="form-control myline" style="margin-bottom:5px" readonly="true" autofocus>
                                         </div>
                                         <div class="col-md-3">
                                             <a href="#" onclick="new_file();" class="btn btn-circle btn-success btn-sm">
-                                                <i class="fa fa-edit"></i> Change
+                                                <i class="fa fa-edit"></i>Ganti
                                             </a>
                                         </div>
                                     </div>
@@ -145,8 +139,8 @@
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
-                                <button type="button" class="btn btn-primary" onclick="simpandata()"><i class="fa fa-save"></i> Save</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Batal</button>
+                                <button type="button" class="btn btn-primary" onclick="simpandata()"><i class="fa fa-save"></i> Simpan</button>
                             </div>
                         </div>
                     </div>
@@ -154,7 +148,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-sm-right">
-                            <a onclick="tambahData()" class="btn btn-success btn-sm" style="color: aliceblue;"><i class="fa fa-plus"> Create</i></a>
+                            <a onclick="tambahData()" class="btn btn-success btn-sm" style="color: aliceblue;"><i class="fa fa-plus"> Tambah Data Barang</i></a>
                         </div>
                     </div>
                     <div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan') ?>">
@@ -168,13 +162,13 @@
                                 <tr>
                                     <th style="width: 10px">No.</th>
                                     <th>Qrcode</th>
-                                    <th>Name</th>
-                                    <th>Category</th>
-                                    <th>Unit</th>
-                                    <th>Price</th>
-                                    <th>Photo Product</th>
-                                    <th>Stock</th>
-                                    <th>Action</th>
+                                    <th>Nama</th>
+                                    <th>Kategori</th>
+                                    <th>Satuan</th>
+                                    <th>Harga</th>
+                                    <th>Gambar Produk</th>
+                                    <th>Stok</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -182,10 +176,10 @@
                                 foreach ($item as $i) { ?>
                                     <tr>
                                         <td><?= $no++ . '.'; ?></td>
-                                        <td>
+                                        <td style="text-align: center">
                                             <?= $i->qrcode; ?><br>
-                                            <a href="<?= site_url('item/qrcode/' . $i->item_id); ?>" class="btn btn-warning btn-sm">
-                                                Generate <i class="fa fa-qrcode"></i>
+                                            <a href=" <?= site_url('item/qrcode/' . $i->item_id); ?>" class="btn btn-warning btn-sm">
+                                                Tampilkan <i class="fa fa-qrcode"></i>
                                             </a>
                                         </td>
                                         <td><?= $i->name; ?></td>
@@ -196,7 +190,7 @@
                                             <img src="<?= base_url('/uploads/product/' . $i->gambar) ?>" style="width: 50px; height:50px;">
                                         </td>
                                         <td><?= $i->stock; ?></td>
-                                        <td style="text-align: center;width:200px;">
+                                        <td style="text-align: center;">
                                             <a onclick="editData(<?= $i->item_id; ?>)" style="margin-bottom:4px;color:white;" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                             <form action="<?= site_url('item/delete') ?>" method="POST" class="d-inline">
                                                 <input type="hidden" name="item_id" value="<?= $i->item_id; ?>">
@@ -245,7 +239,7 @@
         $('#edit_photo').hide();
         dsState = "Input";
 
-        $("#myModal").find('.modal-title').text('Add Item');
+        $("#myModal").find('.modal-title').text('Tambah Barang');
         $("#myModal").modal('show', {
             backdrop: 'true'
         });

@@ -2,13 +2,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Users</h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="<?= site_url('dashboard') ?>">Home</a></li>
-                    <li class="breadcrumb-item active">Users Data</li>
-                </ol>
+                <h1>Akun Pengguna</h1>
             </div>
         </div>
     </div>
@@ -55,7 +49,7 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="address" class="col-form-label">Address <font color="#f00">*</font></label>
+                                            <label for="address" class="col-form-label">Alamat <font color="#f00">*</font></label>
                                         </div>
                                         <div class="col md-8 col-xs-8">
                                             <input type="text" name="address" id="address" class="form-control" style="margin-bottom: 5px;" maxlength="100" autofocus onkeyup="this.value = this.value.capitalize()">
@@ -91,7 +85,7 @@
                                     <div class="form-
                                     row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="password_confirmation" class="col-form-label">Confirm Password <font color="#f00">*</font></label>
+                                            <label for="password_confirmation" class="col-form-label">Konfirmasi Password <font color="#f00">*</font></label>
                                         </div>
                                         <div class="col-md-8 col-xs-4">
                                             <input type="password" name="password_confirmation" id="password_confirmation" style="margin-bottom: 5px;" onkeyup="cekPassword(this.value)" class="form-control">
@@ -101,8 +95,8 @@
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
-                                <button type="button" class="btn btn-primary" onclick="simpandata()"><i class="fa fa-save"></i> Save</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Batal</button>
+                                <button type="button" class="btn btn-primary" onclick="simpandata()"><i class="fa fa-save"></i> Simpan</button>
                             </div>
                         </div>
                     </div>
@@ -110,7 +104,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-sm-right">
-                            <a onclick="tambahData()" class="btn btn-success btn-sm" style="color: aliceblue;"><i class="fa fa-plus"> Create</i></a>
+                            <a onclick="tambahData()" class="btn btn-success btn-sm" style="color: aliceblue;"><i class="fa fa-plus"> Tambahkan Akun Pengguna</i></a>
                         </div>
                     </div>
                     <div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan') ?>">
@@ -132,9 +126,9 @@
                                     <th style="width: 10px">No.</th>
                                     <th>Username</th>
                                     <th>Nama</th>
-                                    <th>Address</th>
+                                    <th>Alamat</th>
                                     <th>Level</th>
-                                    <th>Action</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -193,7 +187,7 @@
         $('#password').val('');
         dsState = "Input";
 
-        $("#myModal").find('.modal-title').text('Add User');
+        $("#myModal").find('.modal-title').text('Tambahkan Akun Pengguna');
         $("#myModal").modal('show', {
             backdrop: 'true'
         });

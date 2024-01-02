@@ -7,7 +7,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="<?= site_url('dashboard') ?>">Home</a></li>
-                    <li class="breadcrumb-item active">Data Suppliers</li>
+                    <li class="breadcrumb-item active">Data Supplier</li>
                 </ol>
             </div>
         </div>
@@ -32,7 +32,7 @@
                                 <form method="post" target="_self" name="formku" id="formku" class="eventInsForm">
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="name" class="col-form-label">Name <font color="#f00">*</font></label>
+                                            <label for="name" class="col-form-label">Nama <font color="#f00">*</font></label>
                                         </div>
                                         <div class="col-md-8 col-xs-8">
                                             <input type="text" name="name" id="name" class="form-control" style="margin-bottom: 5px;" maxlength="100" autofocus>
@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="phone" class="col-form-label">Phone <font color="#f00">*</font></label>
+                                            <label for="phone" class="col-form-label">Nomer Telephone <font color="#f00">*</font></label>
                                         </div>
                                         <div class="col-md-8 col-xs-4">
                                             <input type="number" name="phone" id="phone" class="form-control" style="margin-bottom: 5px;" maxlength="100" autofocus>
@@ -55,7 +55,7 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="address" class="col-form-label">Address <font color="#f00">*</font></label>
+                                            <label for="address" class="col-form-label">Alamat <font color="#f00">*</font></label>
                                         </div>
                                         <div class="col md-8 col-xs-8">
                                             <input type="text" name="address" id="address" class="form-control" style="margin-bottom: 5px;" maxlength="100" autofocus onkeyup="this.value = this.value.capitalize()">
@@ -67,7 +67,7 @@
 
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="desc" class="col-form-label">Description</label>
+                                            <label for="desc" class="col-form-label">Deskripsi</label>
                                         </div>
                                         <div class="col-md-8 col-xs-8">
                                             <textarea name="desc" id="desc" cols="30" rows="5" class="form-control"></textarea>
@@ -76,8 +76,8 @@
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
-                                <button type="button" class="btn btn-primary" onclick="simpandata()"><i class="fa fa-save"></i> Save</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Batal</button>
+                                <button type="button" class="btn btn-primary" onclick="simpandata()"><i class="fa fa-save"></i> Simpan</button>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-sm-right">
-                            <a onclick="tambahData()" class="btn btn-success btn-sm" style="color: aliceblue;"><i class="fa fa-plus"> Create</i></a>
+                            <a onclick="tambahData()" class="btn btn-success btn-sm" style="color: aliceblue;"><i class="fa fa-plus"> Tambah Data</i></a>
                         </div>
                     </div>
                     <div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan') ?>">
@@ -97,11 +97,11 @@
                             <thead>
                                 <tr>
                                     <th style="width: 10px">No.</th>
-                                    <th>Name</th>
-                                    <th>Phone</th>
-                                    <th>Adress</th>
-                                    <th>Description</th>
-                                    <th>Action</th>
+                                    <th>Nama</th>
+                                    <th>Nomer Telephone</th>
+                                    <th>Alamat</th>
+                                    <th>Deskripsi</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>

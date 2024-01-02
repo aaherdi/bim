@@ -2,13 +2,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Stock In</h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="<?= site_url('dashboard') ?>">Home</a></li>
-                    <li class="breadcrumb-item active">Stock In</li>
-                </ol>
+                <h1>Stok Produk Masuk</h1>
             </div>
         </div>
     </div>
@@ -32,7 +26,7 @@
                                 <form method="post" target="_self" name="formku" id="formku" class="eventInsForm">
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="name" class="col-form-label">Date <font color="#f00">*</font></label>
+                                            <label for="name" class="col-form-label">Tanggal <font color="#f00">*</font></label>
                                         </div>
                                         <div class="col-md-8 col-xs-8 input-group date" id="reservationdate" data-target-input="nearest">
                                             <input type="date" name="date" class="form-control" value="<?= date('Y-m-d') ?>" style="margin-bottom: 5px;">
@@ -40,7 +34,7 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="qrcode" class="col-form-label">qrcode <font color="#f00">*</font></label>
+                                            <label for="qrcode" class="col-form-label">Data Qrcode<font color="#f00">*</font></label>
                                         </div>
                                         <div class="col-md-8 col-xs-8 input-group">
                                             <input type="hidden" name="stock_id" id="stock_id">
@@ -52,7 +46,7 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="item_name" class="col-form-label">Item Name <font color="#f00">*</font></label>
+                                            <label for="item_name" class="col-form-label">Nama Produk<font color="#f00">*</font></label>
                                         </div>
                                         <div class="col-md-8 col-xs-8">
                                             <input type="text" name="item_name" id="item_name" class="form-control" style="margin-bottom: 5px;" autofocus readonly>
@@ -60,7 +54,7 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="unit_name" class="col-form-label">Item Unit</label>
+                                            <label for="unit_name" class="col-form-label">Nama Satuan</label>
                                         </div>
                                         <div class="col-md-8 col-xs-8">
                                             <input type="text" name="unit_name" id="unit_name" class="form-control" style="margin-bottom: 5px;" value="-" readonly autofocus>
@@ -68,7 +62,7 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="stock" class="col-form-label">Inital Stock</label>
+                                            <label for="stock" class="col-form-label">Stok Awal</label>
                                         </div>
                                         <div class="col-md-8 col-xs-8">
                                             <input type="text" name="stock" id="stock" class="form-control" style="margin-bottom: 5px;" value="-" readonly autofocus>
@@ -76,7 +70,7 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="detail" class="col-form-label">Detail <font color="#f00">*</font></label>
+                                            <label for="detail" class="col-form-label">Keterangan <font color="#f00">*</font></label>
                                         </div>
                                         <div class="col-md-8 col-xs-8">
                                             <input type="text" name="detail" id="detail" class="form-control" style="margin-bottom: 5px;" autofocus>
@@ -97,7 +91,7 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 col-xs-4">
-                                            <label for="qty" class="col-form-label">Qty <font color="#f00">*</font></label>
+                                            <label for="qty" class="col-form-label">Kuantitas<font color="#f00">*</font></label>
                                         </div>
                                         <div class="col-md-8 col-xs-8">
                                             <input type="number" name="qty" id="qty" class="form-control" style="margin-bottom:5px;" autofocus>
@@ -106,8 +100,8 @@
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
-                                <button type="button" class="btn btn-primary" onclick="simpandata()"><i class="fa fa-save"></i> Save</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Batal</button>
+                                <button type="button" class="btn btn-primary" onclick="simpandata()"><i class="fa fa-save"></i> Simpan</button>
                             </div>
                         </div>
                     </div>

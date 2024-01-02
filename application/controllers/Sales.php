@@ -17,7 +17,7 @@ class Sales extends CI_Controller
         $data['item'] = $this->item_m->get()->result();
         $data['cart'] = $this->sale_m->get_cart();
         $data['invoice'] = $this->sale_m->invoice_no();
-        
+
         $this->template->load('template', 'transaction/sales/sales_form', $data);
     }
 
@@ -101,7 +101,7 @@ class Sales extends CI_Controller
         $get_item = $this->item_m->get($post['cart_item'])->row_array();
         $old_qty = $post['old_qty'];
 
-        if($old_qty > $post['item_qty']){
+        if ($old_qty > $post['item_qty']) {
             $stock_qty = $old_qty - $post['item_qty'];
             $stok = intval($get_item['stock'] + $stock_qty);
 
@@ -112,7 +112,7 @@ class Sales extends CI_Controller
 
             $this->db->where('item_id', $post['cart_item']);
             $this->db->update('p_item', $data);
-        }elseif ($old_qty < $post['item_qty']) {
+        } elseif ($old_qty < $post['item_qty']) {
             $stock_qty = $post['item_qty'] - $old_qty;
             $stok = intval($get_item['stock'] - $stock_qty);
 
@@ -153,7 +153,7 @@ class Sales extends CI_Controller
 
         $this->db->where('item_id', $data['item_id']);
         $this->db->update('p_item', $stoks);
-        
+
         #delete cart
         $this->sale_m->del_cart(['cart_id' => $cart_id]);
 

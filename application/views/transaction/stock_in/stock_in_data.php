@@ -2,13 +2,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Stock In</h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="<?= site_url('dashboard') ?>">Home</a></li>
-                    <li class="breadcrumb-item active">History Stock In</li>
-                </ol>
+                <h1>Stok Barang Masuk</h1>
             </div>
         </div>
     </div>
@@ -19,7 +13,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="float-sm-right">
-                    <a href="<?= site_url('in/add') ?>" class="btn btn-success btn-sm"><i class="fa fa-plus"> Add Stock In</i></a>
+                    <a href="<?= site_url('in/add') ?>" class="btn btn-success btn-sm"><i class="fa fa-plus"> Tambahkan Stok Masuk</i></a>
                 </div>
             </div>
             <div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan') ?>">
@@ -32,11 +26,12 @@
                         <tr>
                             <th style="width: 10px">No.</th>
                             <th>Qrcode</th>
-                            <th>Item Name</th>
-                            <th>Detail</th>
-                            <th>Qty</th>
-                            <th>Date</th>
-                            <th>Action</th>
+                            <th>Nama Barang</th>
+                            <th>Supplier</th>
+                            <th>Keterangan</th>
+                            <th>Kuantitas</th>
+                            <th>Tanggal</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,12 +41,11 @@
                                 <td><?= $no++; ?></td>
                                 <td><?= $s->qrcode; ?></td>
                                 <td><?= $s->item_name ?></td>
+                                <td><?= $s->supplier_name ?></td>
                                 <td><?= $s->detail; ?></td>
                                 <td style="text-align: right;"><?= $s->qty ?></td>
                                 <td style="text-align: center;"><?= indo_date($s->date) ?></td>
                                 <td align="center">
-                                    <a class="btn btn-default btn-sm" id="select-detail" data-toggle="modal" data-target="#modal-detail" data-qrcode="<?= $s->qrcode; ?>" data-itemname=" <?= $s->item_name; ?>" data-suppliername="<?= $s->supplier_name; ?>" data-qty="<?= $s->qty; ?>" data-date="<?= indo_date($s->date); ?>"><i class=" fa fa-eye"></i>
-                                    </a>
                                     <form action="<?= site_url('stock/stock_in_del') ?>" method="post" class="d-inline">
                                         <input type="hidden" name="stock_id" value="<?= $s->stock_id; ?>">
                                         <input type="hidden" name="item_id" value="<?= $s->item_id; ?>">
@@ -68,62 +62,7 @@
         </div>
     </div>
 </section>
-<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modal-detail">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Detail Stock</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body table-responsive">
-                <div class="container-fluid">
-                    <table class="table table-borderless">
-                        <tbody>
-                            <tr>
-                                <th>qrcode</th>
-                                <td>:</td>
-                                <td>
-                                    <span id="qrcode">&nbsp;</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Item Name</th>
-                                <td>:</td>
-                                <td>
-                                    <span id="item_name">&nbsp;</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Supplier</th>
-                                <td>:</td>
-                                <td>
-                                    <span id="supplier">&nbsp;</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Qty</th>
-                                <td>:</td>
-                                <td>
-                                    <span id="qty">&nbsp;</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Date </th>
-                                <td>:</td>
-                                <td>
-                                    <span id="date">&nbsp;</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<script>
+<!-- <script>
     $(document).ready(function() {
         $(document).on('click', '#select-detail', function() {
             var item_id = $(this).data('id');
@@ -141,4 +80,4 @@
             $('#modal-item').modal('hide');
         })
     });
-</script>
+</script> -->

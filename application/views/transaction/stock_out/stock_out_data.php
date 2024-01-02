@@ -2,13 +2,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Stock Out</h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="<?= site_url('dashboard') ?>">Home</a></li>
-                    <li class="breadcrumb-item active">History Stock Out</li>
-                </ol>
+                <h1>Data Barang Keluar</h1>
             </div>
         </div>
     </div>
@@ -19,7 +13,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="float-sm-right">
-                    <a href="<?= site_url('out/add') ?>" class="btn btn-success btn-sm"><i class="fa fa-plus"> Add Stock Out</i></a>
+                    <a href="<?= site_url('out/add') ?>" class="btn btn-success btn-sm"><i class="fa fa-plus"> Tambahkan Data Barang Keluar</i></a>
                 </div>
             </div>
             <div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan') ?>">
@@ -31,12 +25,12 @@
                     <thead>
                         <tr>
                             <th style="width: 10px">No.</th>
-                            <th>qrcode</th>
-                            <th>Item Name</th>
-                            <th>Info</th>
-                            <th>Qty</th>
-                            <th>Date</th>
-                            <th>Action</th>
+                            <th>Qrcode</th>
+                            <th>Nama Barang</th>
+                            <th>Keterangan</th>
+                            <th>Kuantitas</th>
+                            <th>Tanggal</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>

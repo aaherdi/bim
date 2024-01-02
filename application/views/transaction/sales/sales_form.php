@@ -2,13 +2,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Sales</h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="<?= site_url('dashboard') ?>">Transaction</a></li>
-                    <li class="breadcrumb-item active">Sales</li>
-                </ol>
+                <h1>Penjualan</h1>
             </div>
         </div>
     </div>
@@ -23,7 +17,7 @@
                         <table>
                             <tr>
                                 <td style="vertical-align: top;">
-                                    <label for="date">Date</label>
+                                    <label for="date">Tanggal</label>
                                 </td>
                                 <td>
                                     <div class="form-group">
@@ -43,7 +37,7 @@
                             </tr>
                             <tr>
                                 <td style="vertical-align: top;">
-                                    <label for="user">Customer</label>
+                                    <label for="user">Pelanggan</label>
                                 </td>
                                 <td>
                                     <div class="form-group">
@@ -66,7 +60,7 @@
                         <table width="100%">
                             <tr>
                                 <td style="vertical-align: top; width:30%;">
-                                    <label for="qrcode">qrcode</label>
+                                    <label for="qrcode">Qrcode</label>
                                 </td>
                                 <td>
                                     <div class="form-group input-group">
@@ -84,7 +78,7 @@
                             </tr>
                             <tr>
                                 <td style="vertical-align: top; width:30%;">
-                                    <label for="qty">Qty</label>
+                                    <label for="qty">Kuantitas</label>
                                 </td>
                                 <td>
                                     <div class="form-group">
@@ -97,7 +91,7 @@
                                 <td>
                                     <div>
                                         <button type="button" id="add_cart" class="btn btn-primary">
-                                            <i class="fa fa-cart-plus"> Add</i>
+                                            <i class="fa fa-cart-plus"> Tambahkan</i>
                                         </button>
                                     </div>
                                 </td>
@@ -126,13 +120,13 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>qrcode</th>
-                                        <th>Product Item</th>
-                                        <th>Price</th>
-                                        <th>Qty</th>
-                                        <th width="10%">Discount Item</th>
+                                        <th>Qrcode</th>
+                                        <th>Produk</th>
+                                        <th>Harga</th>
+                                        <th>Kuantitas</th>
+                                        <th width="10%">Diskon Barang</th>
                                         <th width="15%">Total</th>
-                                        <th>Actions</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
 
@@ -163,7 +157,7 @@
                             </tr>
                             <tr>
                                 <td style="vertical-align:top;">
-                                    <label for="discount">Discount</label>
+                                    <label for="discount">Diskon</label>
                                 </td>
                                 <td>
                                     <div class="form-group">
@@ -191,7 +185,7 @@
                         <table width="100%">
                             <tr>
                                 <td style="vertical-align:top;width:30%;">
-                                    <label for="cash">Cash</label>
+                                    <label for="cash">Uang</label>
                                 </td>
                                 <td>
                                     <div class="form-group">
@@ -201,7 +195,7 @@
                             </tr>
                             <tr>
                                 <td style="vertical-align:top;">
-                                    <label for="change">Change</label>
+                                    <label for="change">Kembalian</label>
                                 </td>
                                 <td>
                                     <div class="form-group">
@@ -219,7 +213,7 @@
                         <table width="100%">
                             <tr>
                                 <td style="vertical-align:top;">
-                                    <label for="note">Note</label>
+                                    <label for="note">Catatan</label>
                                 </td>
                                 <td>
                                     <div class="form-group">
@@ -234,10 +228,10 @@
             <div class="col-lg-3">
                 <div>
                     <button id="cancel_payment" class="btn btn-flat btn-warning" style="color: white;">
-                        <i class="fa fa-recycle"></i> Cancel
+                        <i class="fa fa-recycle"></i> Batalkan Transaksi
                     </button><br><br>
                     <button id="process_payment" name="process_payment" class="btn btn-flat btn-lg btn-success">
-                        <i class="fa fa-paper-plane"></i> Process Payment
+                        <i class="fa fa-paper-plane"></i> Proses Pembayaran
                     </button>
                 </div>
             </div>
@@ -248,7 +242,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Add Product Item</h4>
+                <h4 class="modal-title">Tambahkan Produk</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -259,11 +253,11 @@
                         <thead>
                             <tr>
                                 <th>Qrcode</th>
-                                <th>Name</th>
-                                <th>Unit</th>
-                                <th>Price</th>
-                                <th>Stock</th>
-                                <th>Action</th>
+                                <th>Nama</th>
+                                <th>Satuan</th>
+                                <th>Harga</th>
+                                <th>Stok</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody id="tblItem">

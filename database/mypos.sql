@@ -401,7 +401,7 @@ ALTER TABLE `t_sale`
 -- Indexes for table `t_sale_detail`
 --
 ALTER TABLE `t_sale_detail`
-  ADD PRIMARY KEY (`sale_id`);
+  ADD  KEY (`sale_id`);
 
 --
 -- Indexes for table `t_stock`
