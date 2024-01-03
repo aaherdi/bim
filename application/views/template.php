@@ -74,7 +74,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= site_url('customer') ?>" class="nav-link" <?= $this->uri->segment(1) == 'customer' ? 'active' : '' ?>>
+                            <a href="<?= site_url('customer') ?>" class="nav-link  <?= $this->uri->segment(1) == 'customer' ? 'active' : '' ?>">
                                 <i class="fas fa-users nav-icon"></i>
                                 <p>Pelanggan</p>
                             </a>
@@ -137,38 +137,16 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item has-treeview <?= $this->uri->segment(2) == 'sale_report' || $this->uri->segment(2) == 'stock_report' || $this->uri->segment(2) == 'report_sale' ? 'menu-open' : '' ?>">
-                        <a href="#" class="nav-link <?= $this->uri->segment(2) == 'sale_report' || $this->uri->segment(2) == 'stock_report' || $this->uri->segment(2) == 'report_sale' ? 'active' : '' ?>">
+                    <li class="nav-item">
+                        <a href="<?= site_url('reports/sale_report'); ?>" class="nav-link <?= $this->uri->segment(2) == 'sale_report' ? 'active' : '' ?>">
                             <i class="nav-icon fas fa-chart-pie"></i>
-                            <p>
-                                Laporan
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
+                            <p>Laporan</p>
                         </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?= site_url('reports/sale_report'); ?>" class="nav-link <?= $this->uri->segment(2) == 'sale_report' ? 'active' : '' ?>">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Histori Penjualan</p>
-                                </a>
-                            </li>
-                            <!-- <li class="nav-item">
-                                <a href="<?= site_url('reports/stock_report') ?>" class="nav-link <?= $this->uri->segment(2) == 'stock_report' ? 'active' : '' ?>">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Stocks</p>
-                                </a>
-                            </li> -->
-                            <li class="nav-item">
-                                <a href="<?= site_url('reports/report_sale') ?>" class="nav-link <?= $this->uri->segment(2) == 'report_sale' ? 'active' : '' ?>">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Cetak Laporan</p>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <?php if ($this->fungsi->user_login()->level == 1) { ?>
                         <li class="nav-item">
-                            <a href="<?= site_url('user') ?>" class="nav-link">
+
+                            <a href="<?= site_url('user') ?>" class="nav-link  <?= $this->uri->segment(1) == 'user' ? 'active' : '' ?>">
                                 <i class="fas fa-user nav-icon"></i>
                                 <p>Pengguna</p>
                             </a>

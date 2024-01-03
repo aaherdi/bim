@@ -5,6 +5,10 @@ if (flashData) {
 	Swal.fire("Konfirmasi", flashData, "success");
 }
 
+if (flashData) {
+	Swal.fire("eror", flashData, "warning");
+}
+
 //berhasil login
 const login = $(".berhasil-login").data("flashdata");
 //console.log(flashData);

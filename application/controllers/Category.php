@@ -56,8 +56,12 @@ class Category extends CI_Controller
     {
         $id = $this->input->post('category_id');
         $this->category_m->delete($id);
-
-        $this->session->set_flashdata('pesan', 'Data Categories berhasil di hapus!');
+        $error = $this->db->error();
+        if ($error['code'] != 0) {
+            $this->session->set_flashdata('pesan', 'Data Supplier tidak berhasil di hapus karna data terhubung ke data lain!');
+        } else {
+            $this->session->set_flashdata('pesan', 'Data Kategori berhasil di hapus!');
+        }
         redirect('category');
     }
 }

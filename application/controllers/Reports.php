@@ -37,18 +37,13 @@ class Reports extends CI_Controller
         $this->fungsi->PdfGenerator($html, 'Laporan-' . $data['report']->invoice, 'A4', 'landscape');
     }
 
-    public function report_sale()
-    {
-        $this->template->load('template', 'reports/laporan_penjualan');
-    }
-
     public function print_laporan_penjualan()
     {
         $s = date('Y-m-d', strtotime($_GET['ts']));
         $e = date('Y-m-d', strtotime($_GET['te']));
         $data['s']             = $s;
         $data['e']             = $e;
-        $data['detailLaporan'] = $this->laporan_m->print_laporan($s,$e)->result();
+        $data['detailLaporan'] = $this->laporan_m->print_laporan($s, $e)->result();
         $this->load->view('reports/print_laporan_penjualan', $data);
     }
 }
