@@ -49,7 +49,7 @@ class Stock extends CI_Controller
                     'cluster' => 'ap1',
                     'useTLS' => true
                 );
-                
+
                 $pusher = new Pusher\Pusher(
                     'd4392a044ecee1cce52a',
                     '2ee60baddf74f9ad2925',
@@ -101,7 +101,7 @@ class Stock extends CI_Controller
             'qty' => $qty,
             'item_id' => $item_id
         ];
-        $this->item_m->update_stock_out($data);
+        $this->item_m->update_stock_in($data);
         $this->stock_m->del($stock_id);
 
         if ($this->db->affected_rows() > 0) {
