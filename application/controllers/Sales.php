@@ -180,6 +180,7 @@ class Sales extends CI_Controller
     {
         $data['sale'] = $this->sale_m->get_sale($id)->row();
         $data['sale_detail'] = $this->sale_m->get_sale_detail($id)->result();
+        // dd($data);
         $this->load->view('transaction/sales/print_struk', $data);
     }
 }

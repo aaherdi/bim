@@ -46,4 +46,12 @@ class Reports extends CI_Controller
         $data['detailLaporan'] = $this->laporan_m->print_laporan($s, $e)->result();
         $this->load->view('reports/print_laporan_penjualan', $data);
     }
+
+    public function detail_invoice($id)
+    {
+        $data['sale'] = $this->sale_m->get_sale($id)->row();
+        $data['sale_detail'] = $this->sale_m->get_sale_detail($id)->result();
+        // dd($data);
+        $this->load->view('reports/struk', $data);
+    }
 }

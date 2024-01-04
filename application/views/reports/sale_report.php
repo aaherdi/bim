@@ -103,7 +103,9 @@
                                     <h5><span class="badge badge-secondary"><?= $s->user_name; ?></span></h5>
                                 </td>
                                 <td align="center">
-                                    <a class="btn btn-default btn-sm" onclick="showDetail(<?= $s->sale_id; ?>)"><i class=" fa fa-eye"> Detail</i>
+                                    <!-- <a class="btn btn-default btn-sm" onclick="showDetail(<?= $s->sale_id; ?>)"><i class=" fa fa-eye"> Detail</i>
+                                    </a> -->
+                                    <a class="btn btn-default btn-sm" href="<?= site_url('reports/detail_invoice/' . $s->sale_id); ?>" target="_blank"> <i class=" fa fa-print"> Struk</i>
                                     </a>
                                 </td>
                             </tr>
@@ -118,87 +120,56 @@
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Detail Stock</h4>
+                <h4 class="modal-title">Detail Transaksi</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                    <div class="col-md-12">
-                        <table class="table table-borderless">
-                            <tbody>
-                                <tr>
-                                    <th>Nama Barang</th>
-                                    <td>:</td>
-                                    <td>
-                                        <span id="item_name">&nbsp;</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Harga</th>
-                                    <td>:</td>
-                                    <td>
-                                        <span id="price">&nbsp;</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Kuantitas</th>
-                                    <td>:</td>
-                                    <td>
-                                        <span id="qty">&nbsp;</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Diskon</th>
-                                    <td>:</td>
-                                    <td>
-                                        <span id="disc">&nbsp;</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Total Pembayaran</th>
-                                    <td>:</td>
-                                    <td>
-                                        <span id="total">&nbsp;</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <th>Barang</th>
+                                <td>:</td>
+                                <td>
+                                    <span id="item_name">&nbsp;</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Harga</th>
+                                <td>:</td>
+                                <td>
+                                    <span id="price">&nbsp;</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Kuantitas</th>
+                                <td>:</td>
+                                <td>
+                                    <span id="qty">&nbsp;</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Diskon </th>
+                                <td>:</td>
+                                <td>
+                                    <span id="disc">&nbsp;</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Total Pembayaran </th>
+                                <td>:</td>
+                                <td>
+                                    <span id="total">&nbsp;</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        function showDetail(sale_id) {
-            $.ajax({
-                type: "POST",
-                url: "<?= site_url('reports/detail'); ?>",
-                data: {
-                    sale_id: sale_id
-                },
-                dataType: "json",
-                success: function(result) {
-                    // console.log(result)
-                    $('#item_name').text(result['item_name']);
-                    $('#price').text(result['price']);
-                    $('#qty').text(result['qty']);
-                    $('#disc').text(result['discount_item']);
-                    $('#total').text(result['total']);
-                    $('#sale_id').val(result['sale_id']);
-
-                    $('#modal-detail').modal('show')
-                }
-            });
-        }
-
-        function printSale(sale_id) {
-
-        }
-    </script>
-
     <script>
         function simpanData() {
             if ($.trim($("#tgl_start").val()) == "") {

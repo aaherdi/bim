@@ -1,12 +1,8 @@
 const flashData = $(".flash-data").data("flashdata");
-//console.log(flashData);
+console.log(flashData);
 
 if (flashData) {
 	Swal.fire("Konfirmasi", flashData, "success");
-}
-
-if (flashData) {
-	Swal.fire("eror", flashData, "warning");
 }
 
 //berhasil login

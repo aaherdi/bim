@@ -58,7 +58,7 @@ class Category extends CI_Controller
         $this->category_m->delete($id);
         $error = $this->db->error();
         if ($error['code'] != 0) {
-            $this->session->set_flashdata('pesan', 'Data Supplier tidak berhasil di hapus karna data terhubung ke data lain!');
+            $this->session->set_flashdata('pesan', 'Data Kategori tidak berhasil di hapus karna data terhubung ke data lain!');
         } else {
             $this->session->set_flashdata('pesan', 'Data Kategori berhasil di hapus!');
         }
