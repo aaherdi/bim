@@ -161,20 +161,20 @@ class Sales extends CI_Controller
         redirect('sales');
     }
 
-    public function reset()
-    {
-        if (isset($_POST['cancel_payment'])) {
-            $userid = $this->session->userdata('userid');
-            $this->sale_m->del_cart(['user_id' => $userid]);
+    // public function reset()
+    // {
+    //     if (isset($_POST['cancel_payment'])) {
+    //         $userid = $this->session->userdata('userid');
+    //         $this->sale_m->del_cart(['user_id' => $userid]);
 
-            if ($this->db->affected_rows() > 0) {
-                $params = array("success" => true);
-            } else {
-                $params = array("success" => false);
-            }
-            echo json_encode($params);
-        }
-    }
+    //         if ($this->db->affected_rows() > 0) {
+    //             $params = array("success" => true);
+    //         } else {
+    //             $params = array("success" => false);
+    //         }
+    //         echo json_encode($params);
+    //     }
+    // }
 
     public function cetak($id)
     {

@@ -227,9 +227,9 @@
             </div>
             <div class="col-lg-3">
                 <div>
-                    <button id="cancel_payment" class="btn btn-flat btn-warning" style="color: white;">
+                    <!-- <button id="cancel_payment" class="btn btn-flat btn-warning" style="color: white;">
                         <i class="fa fa-recycle"></i> Batalkan Transaksi
-                    </button><br><br>
+                    </button><br><br> -->
                     <button id="process_payment" name="process_payment" class="btn btn-flat btn-lg btn-success">
                         <i class="fa fa-paper-plane"></i> Proses Pembayaran
                     </button>
@@ -422,32 +422,32 @@
         }
     });
 
-    $(document).on('click', '#cancel_payment', function() {
-        if (confirm('Ingin membatalkan pesanan?')) {
-            $.ajax({
-                type: "POST",
-                url: "<?= site_url('sales/reset') ?>",
-                data: {
-                    'cancel_payment': true
-                },
-                dataType: "json",
-                success: function(result) {
-                    if (result.success == true) {
-                        console.log('terhapus')
-                        $('#cart_tabel').load('<?= site_url('sales/cart_data'); ?>', function() {
-                            calculate()
-                        });
-                    }
-                }
-            })
-            $('#discount').val(0)
-            $('#cash').val(0)
-            $('#customer').val(0).change()
-            $('#qrcode').val('')
-            $('#qrcode').focus()
+    // $(document).on('click', '#cancel_payment', function() {
+    //     if (confirm('Ingin membatalkan pesanan?')) {
+    //         $.ajax({
+    //             type: "POST",
+    //             url: "<?= site_url('sales/reset') ?>",
+    //             data: {
+    //                 'cancel_payment': true
+    //             },
+    //             dataType: "json",
+    //             success: function(result) {
+    //                 if (result.success == true) {
+    //                     console.log('terhapus')
+    //                     $('#cart_tabel').load('<?= site_url('sales/cart_data'); ?>', function() {
+    //                         calculate()
+    //                     });
+    //                 }
+    //             }
+    //         })
+    //         $('#discount').val(0)
+    //         $('#cash').val(0)
+    //         $('#customer').val(0).change()
+    //         $('#qrcode').val('')
+    //         $('#qrcode').focus()
 
-        }
-    });
+    //     }
+    // });
 
     function loadItem() {
         $.ajax({
