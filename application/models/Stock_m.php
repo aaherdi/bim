@@ -27,6 +27,17 @@ class Stock_m extends CI_Model
         return $query;
     }
 
+    public function get_stock_in()
+    {
+        $this->db->select('t_stock.*,p_item.qrcode, p_item.gambar, p_item.name as item_name, supplier.name as supplier_name');
+        $this->db->from('t_stock');
+        $this->db->join('p_item', 'p_item.item_id=t_stock.item_id');
+        $this->db->join('supplier', 'supplier.supplier_id=t_stock.supplier_id', 'left');
+        $this->db->where('type', 'in');
+        $query = $this->db->get();
+        return $query;
+    }
+
     public function get_stock_out()
     {
         $this->db->select('t_stock.*,p_item.qrcode, p_item.gambar, p_item.name as item_name, supplier.name as supplier_name');
